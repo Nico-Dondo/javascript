@@ -67,18 +67,55 @@
 
 //}
 //Mensaje de Bienvenida al Bar
+
+/*alert ("Bienvenidos a Dali-Bar");
+
+
+let ingreseNombre = prompt ("Ingrese su Nombre");
+
+let ingreseApellido = prompt ("Ingrese su Apellido");
+
+let ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
+
+alert ((ingreseNombre  )+ " " + (ingreseApellido));
+
+if (ingreseCodigo != "1234"){
+ alert ( "Codigo Incorrecto,vuelva a ingresar el codigo");
+ ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
+}else{( ingreseCodigo==1234);
+  alert ("Contunuamos");
+}
+ prompt ("Quiere resevar para cenar?");
+ prompt ("Quiere reservar para Jam?");
+ prompt ("Quiere Reservar para cantobar?");
+
+
+
+alert ("Si no encuentra su opcion por favor ponganse en contacto con nosotros")*/
+
+
+
 alert ("Bienvenidos a Dali-Bar");
+let ingreseNombre = prompt ("Ingrese su Nombre");
+let ingreseApellido = prompt ("Ingrese su Apellido");
+let ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
+alert ("Bienvenido:\n"+(ingreseNombre  )+ " " + (ingreseApellido));
 
-let ingreseNombre = prompt ("Ingrese su Nombre")
-let ingreseApellido = prompt ("Ingrese su Apellido")
-let ingreseCodigo = prompt("Ingrese codigo Dali para ingresar")
+while(ingreseNombre == "" || ingreseApellido == ""){
+  alert("No ingreso alguno de los datos, por favor ingréselos!");
+  ingreseNombre = prompt ("Ingrese su Nombre");
+  ingreseApellido = prompt ("Ingrese su Apellido");
+}
 
-if (ingreseCodigo != "Ingrese codigo Dali para ingresar"){
-    alert (ingreseCodigo  + "Continuamos")
-    prompt ("Quiere resevar para cenar?")
-    prompt ("Quiere reservar para Jam?")
-    prompt ("Quiere Reservar para cantobar?")
-  
-} 
-
-alert ("Si no encuentra su opcion por favor ponganse en contacto con nosotros")
+while( ingreseCodigo != "1234"){
+  alert ( "Código Incorrecto, vuelva a ingresar el código");
+  ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar")); 
+}
+while( ingreseCodigo==1234){ 
+  prompt ("Quiere resevar para cenar?");
+  prompt ("Quiere reservar para Jam?");
+  prompt ("Quiere Reservar para cantobar?");
+  alert ("Si no encuentra su opción por favor pónganse en contacto con nosotros");
+  break;
+}
+ 

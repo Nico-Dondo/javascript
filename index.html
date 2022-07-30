@@ -28,20 +28,63 @@
    // Nicolas Dondo comision 33980
 
    alert ("Bienvenidos a Dali-Bar");
+  let ingreseNombre = prompt ("Ingrese su Nombre");
+  let ingreseApellido = prompt ("Ingrese su Apellido");
+  let ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
+  alert ("Bienvenido:\n"+(ingreseNombre  )+ " " + (ingreseApellido));
 
-let ingreseNombre = prompt ("Ingrese su Nombre")
-let ingreseApellido = prompt ("Ingrese su Apellido")
-let ingreseCodigo = prompt("Ingrese codigo Dali para ingresar")
+while(ingreseNombre == "" || ingreseApellido == ""){
+  alert("No ingreso alguno de los datos, por favor ingréselos!");
+  ingreseNombre = prompt ("Ingrese su Nombre");
+  ingreseApellido = prompt ("Ingrese su Apellido");
 
-if (ingreseCodigo != "Ingrese codigo Dali para ingresar"){
-    alert (ingreseCodigo  + "Continuamos")
-    prompt ("Quiere resevar para cenar?")
-    prompt ("Quiere reservar para Jam?")
-    prompt ("Quiere Reservar para cantobar?")
+}
+
+while( ingreseCodigo != "1234"){
+  alert ( "Código Incorrecto, vuelva a ingresar el código");
+  ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar")); 
+}
+
+if( ingreseCodigo==1234){
+ /* prompt ("Quiere resevar para cenar?");
+  let ingreseDia = prompt ("Ingrese dia de la reserva: \n Lunes, \n Martes, \n Miercoles, \n Jueves, \n Viernes, \n Sabado");
+  let ingreseHorario = parseInt(prompt("Ingrese su Horario \n 20 \n 21 \n 22 \n 23"));
+  alert ("Su dia y horario de reserva es: \n" + (ingreseDia)+ " " + "a las" + " " + (ingreseHorario) + " " + "horas");}*/
   
-} 
+  let seleccion = prompt("Usted desea reservar para cena, cantobar o jam?");
+  let ingreseDia = prompt ("Ingrese dia de la reserva: \n Lunes, \n Martes, \n Miercoles, \n Jueves, \n Viernes, \n Sabado");
+  let ingreseHorario = parseInt(prompt("Ingrese su Horario \n 20 \n 21 \n 22 \n 23"));
 
-alert ("Si no encuentra su opcion por favor ponganse en contacto con nosotros")
+function reservas(ingreseDia, ingreseHorario){
+  var resultado = ingreseDia + ingreseHorario;
+  return(resultado);
+}
+
+if(seleccion == "cena"){
+  let cena1 = prompt ("Desea resevar para cenar SI o NO?");
+  (cena1 == "si");
+  alert(reservas("Su dia y horario de reserva para cenar es: \n" + (ingreseDia)+ " a las " + (ingreseHorario) ));
+}
+
+
+
+if(seleccion == "cantobar"){
+  let cantobar = prompt ("Desea resevar para cantobar SI o NO?");
+  (cantobar == "si");
+  alert(reservas("Su dia y horario de reserva para cantobar es: \n" + (ingreseDia)+ " a las " + (ingreseHorario)));
+}
+
+
+if(seleccion == "jam"){
+  let jam = prompt ("Desea resevar para jam SI o NO?");
+  (jam == "si");
+  alert(reservas("Su dia y horario de reserva para jam es: \n" + ingreseDia+ " a las " + ingreseHorario));
+}
+
+if(seleccion == "no"){
+  alert("GRACIAS POR VISITARNOS");
+}
+} 
 
     /*
         una de las mejores practicas en el desarrollo WEB 
